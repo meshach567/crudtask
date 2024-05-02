@@ -1,0 +1,68 @@
+@use "sass:math";
+@use "../abstracts/variables" as *;
+
+.card {
+  //box-shadow: $shadow-sm;
+  border-radius: $border-radius-25;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  background-color: $color-surface-1;
+  margin-bottom: $space-1;
+  transition: $transition-cubic-bezier;
+
+  .card-header {
+    padding: math.div($space-1, 2) math.div($space-1, .8);
+    width: 100%;
+
+    &:has(.card-img) {
+      padding: 0;
+    }
+
+    .card-img {
+      height: 250px;
+      width: 100%;
+      max-width: 100%;
+      border-radius: $border-radius-12 $border-radius-12 $border-radius-25 $border-radius-25;
+      object-fit: cover;
+    }
+  }
+
+  .card-body {
+    padding: math.div($space-1, .8);
+    width: 100%;
+  }
+
+  .card-footer {
+    display: flex;
+    padding: math.div($space-1, 2) math.div($space-1, .8);
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &:is(.header-hero) {
+    padding: $space-3;
+
+    &:is(.header-sidebar) {
+      background-color: #36a9e2;
+      background-image: radial-gradient(at 76% 12%, hsl(155, 94%, 35%) 0px, transparent 50%), radial-gradient(at 27% 95%, hsl(19, 97%, 76%) 0px, transparent 50%), radial-gradient(at 82% 87%, hsl(133, 97%, 62%) 0px, transparent 50%), radial-gradient(at 71% 14%, hsl(219, 77%, 48%) 0px, transparent 50%), radial-gradient(at 75% 99%, hsl(27, 91%, 59%) 0px, transparent 50%), radial-gradient(at 18% 55%, hsl(88, 73%, 37%) 0px, transparent 50%);
+    }
+
+    &:is(.header-buttons) {
+      background-color: #747deb;
+      background-image: radial-gradient(at 37% 3%, hsl(234, 23%, 48%) 0px, transparent 50%), radial-gradient(at 64% 77%, hsl(213, 94%, 56%) 0px, transparent 50%), radial-gradient(at 74% 82%, hsl(233, 46%, 50%) 0px, transparent 50%), radial-gradient(at 36% 97%, hsl(232, 76%, 86%) 0px, transparent 50%), radial-gradient(at 15% 37%, hsl(189, 92%, 37%) 0px, transparent 50%), radial-gradient(at 89% 3%, hsl(121, 72%, 65%) 0px, transparent 50%);
+    }
+
+    &:is(.header-cards) {
+      background-color: #86e5b8;
+      background-image: radial-gradient(at 64% 9%, hsl(211, 91%, 37%) 0px, transparent 50%), radial-gradient(at 82% 81%, hsl(170, 39%, 73%) 0px, transparent 50%), radial-gradient(at 43% 87%, hsl(40, 79%, 61%) 0px, transparent 50%), radial-gradient(at 41% 4%, hsl(354, 26%, 63%) 0px, transparent 50%), radial-gradient(at 96% 37%, hsl(256, 44%, 57%) 0px, transparent 50%), radial-gradient(at 65% 46%, hsl(121, 88%, 67%) 0px, transparent 50%);
+    }
+
+    &:is(.header-typography) {
+      background-color: #a26f1f;
+      background-image: radial-gradient(at 45% 22%, hsl(352, 74%, 78%) 0px, transparent 50%), radial-gradient(at 52% 100%, hsl(350, 98%, 64%) 0px, transparent 50%), radial-gradient(at 75% 27%, hsl(98, 62%, 73%) 0px, transparent 50%), radial-gradient(at 64% 11%, hsl(301, 22%, 24%) 0px, transparent 50%), radial-gradient(at 64% 10%, hsl(76, 83%, 64%) 0px, transparent 50%), radial-gradient(at 97% 66%, hsl(345, 93%, 59%) 0px, transparent 50%)
+    }
+  }
+}
+

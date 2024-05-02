@@ -1,0 +1,42 @@
+@use "../abstracts/variables" as *;
+
+.container {
+  max-width: 1220px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: calc(#{$gutter-y} * -1);
+  margin-right: calc(#{$gutter-x} * -0.5);
+  margin-left: calc(#{$gutter-x} * -0.5);
+
+  & > * {
+    max-width: 100%;
+    padding-left: calc(#{$gutter-x} * 0.5);
+    padding-right: calc(#{$gutter-x} * 0.5);
+    margin-top: $gutter-y;
+  }
+}
+
+.col-4 {
+  flex: 0 0 auto;
+  width: 33.33333333%;
+}
+
+.col-6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.col-12 {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.justify-content-center {
+  justify-content: center;
+}

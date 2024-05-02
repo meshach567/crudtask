@@ -1,0 +1,143 @@
+$bg-body: #ffffff;
+$color-on-body: #000000;
+$color-muted: #52595f;
+
+//$color-primary: #15DC9B;
+$color-primary: #f05146;
+$color-primary-dark: scale-color($color-primary, $lightness: -80%);
+$color-secondary: #46e5f0;
+$color-secondary-dark: scale-color($color-secondary, $lightness: -80%);
+$color-accent: #0063cd;
+$color-accent-dark: #001787;
+$color-transparent: transparent;
+
+$color-on-primary: #000000;
+$color-on-primary-inverse: #ffffff;
+
+$color-dark: #121212;
+$color-white: #ffffff;
+
+// CARDS
+$color-surface-1: #ffffff;
+$color-surface-outline: #dadce0;
+
+$enabled-dynamic-theme: true;
+
+// DYNAMIC BACKGROUND COLORS
+@if ($enabled-dynamic-theme == true) {
+  $bg-body: mix($bg-body, $color-primary, 95%);
+  $color-surface-1: mix($color-surface-1, $color-primary, 85%);
+  $color-surface-outline: mix($color-surface-outline, $color-primary, 70%);
+}
+
+$theme-colors: (
+        'color-white': #ffffff,
+        'color-black': #000000,
+        'color-default': #f5f8fa,
+        'color-success': #00c853,
+        'color-warning': #ffab00,
+        'color-info': #0000be,
+        'color-danger': #de2839,
+        'color-red': #ff1744,
+        'color-pink': #f50057,
+        'color-purple': #d500f9,
+        'color-deep-purple': #651fff,
+        'color-blue': #2979ff,
+        'color-cyan': #00e5ff,
+        'color-teal': #1de9b6,
+        'color-green': #00e676,
+        'color-yellow': #ffea00,
+        'color-amber': #ffc400,
+        'color-orange': #ff3d00,
+);
+
+$variable-prefix: theme- !default;
+$font-dm-sans: "DM Sans", sans-serif;
+
+$space-1: 1rem;
+$space-2: 2rem;
+$space-3: 3rem;
+
+$fw-400: 400;
+$fw-500: 500;
+$fw-700: 700;
+
+$border-radius-0: 0;
+$border-radius-4: 4px;
+$border-radius-6: 6px;
+$border-radius-8: ($border-radius-4 * 2);
+$border-radius-12: ($border-radius-6 * 2);
+$border-radius-25: 25px;
+$border-radius-50: ($border-radius-25 * 2);
+
+$shadow-0dp: none;
+$shadow-sm: 0px 1px 10px 0px rgba(0, 0, 0, 0.1);
+$shadow-md: 0px 1px 20px 0px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0px 1px 30px 5px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0px 5px 50px 10px rgba(0, 0, 0, 0.1);
+
+$transition-sidebar: .2s ease-in-out;
+$transition-cubic-bezier: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+$gutter-x: 1.5rem;
+$gutter-y: 0;
+
+// Breakpoints
+$breakpoints: (
+        1155: 1155px,
+        1024: 1024px,
+        992: 992px,
+        768: 768px,
+        600: 600px,
+        320: 320px,
+);
+
+// Type scale
+$ds-headline1: (
+        font-family: ("DM Sans", sans-serif),
+        font-weight: 700,
+        font-size: clamp(var(--fs-1)),
+        letter-spacing: -1.5px,
+);
+
+$ds-headline2: (
+        font-family: ("DM Sans", sans-serif),
+        font-weight: 500,
+        font-size: clamp(var(--fs-2)),
+        letter-spacing: -0.5px,
+);
+
+$ds-headline3: (
+        font-family: ("DM Sans", sans-serif),
+        font-weight: 400,
+        font-size: clamp(var(--fs-3)),
+        letter-spacing: 0px,
+);
+
+$ds-headline4: (
+        font-family: ("DM Sans", sans-serif),
+        font-weight: 400,
+        font-size: clamp(var(--fs-4)),
+        letter-spacing: 0.25px,
+);
+
+$ds-headline5: (
+        font-family: ("DM Sans", sans-serif),
+        font-weight: 400,
+        font-size: clamp(var(--fs-5)),
+        letter-spacing: 0px,
+);
+
+$ds-headline6: (
+        font-family: ("DM Sans", sans-serif),
+        font-weight: 400,
+        font-size: clamp(var(--fs-6)),
+        letter-spacing: 0.15px,
+);
+
+$ds-subtitle1: (
+        font-family: ("DM Sans", sans-serif),
+        font-weight: 400,
+        font-size: 15px,
+        letter-spacing: 0.15px,
+);

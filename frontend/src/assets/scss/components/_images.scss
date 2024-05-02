@@ -1,0 +1,7 @@
+@use "../abstracts/variables" as *;
+
+.img-fluid {
+  height: auto;
+  max-width: 100%;
+  border-radius: $border-radius-12;
+}

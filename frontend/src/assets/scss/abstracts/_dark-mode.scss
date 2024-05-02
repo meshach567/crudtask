@@ -1,0 +1,234 @@
+@use "variables" as *;
+@use "../abstracts/mixins" as m;
+
+@media (prefers-color-scheme: dark) {
+  //****** VARIABLES *****//
+  $bg-body: #121212;
+  $color-on-body: #ffffff;
+  $color-muted: scale-color($color-muted, $lightness: 60%);
+  $color-primary: scale-color($color-primary, $lightness: 60%);
+  $color-primary-dark: scale-color($color-primary, $lightness: -80%);
+  $color-secondary: scale-color($color-secondary, $lightness: 60%);
+  $color-secondary-dark: scale-color($color-secondary, $lightness: -80%);
+  $color-on-primary: #ffffff;
+  $color-on-primary-inverse: #000000;
+  $color-surface-1: #1e1e1e;
+  $color-surface-outline: #323232;
+
+  // DYNAMIC BACKGROUND COLORS
+  @if ($enabled-dynamic-theme == true) {
+    $bg-body: mix($bg-body, $color-primary, 95%);
+    $color-surface-1: mix($color-surface-1, $color-primary, 85%);
+    $color-surface-outline: mix($color-surface-outline, $color-primary, 70%);
+  }
+
+  //****** BASE *****//
+  body {
+    background-color: $bg-body;
+    color: $color-on-body;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: $color-surface-1 $color-surface-outline;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: $color-surface-1;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: $color-surface-outline;
+    border-radius: 20px;
+  }
+
+  // TYPOGRAPHY
+  a {
+    color: $color-secondary;
+
+    &.text-link {
+      &:hover {
+        box-shadow: inset 0 -3px 0 $color-secondary;
+      }
+    }
+  }
+
+  // COLORS
+  .text-primary {
+    color: $color-primary;
+  }
+
+  .text-secondary {
+    color: $color-secondary;
+  }
+
+  .text-muted {
+    color: $color-muted;
+  }
+
+  //****** COMPONENTS *****//
+  // BUTTONS
+  .btn {
+    &.btn-primary {
+      // COLOR - BACKGROUND
+      @include m.btn-filled($color-primary-dark, $color-primary);
+    }
+
+    &.btn-primary-filled {
+      @include m.btn-filled($color-primary, $color-primary-dark);
+    }
+
+    &.btn-secondary {
+      @include m.btn-filled($color-secondary-dark, $color-secondary);
+    }
+
+    &.btn-accent {
+      @include m.btn-filled($color-on-primary-inverse, $color-on-primary);
+    }
+
+    &.btn-link {
+      @include m.btn-filled($color-primary, $color-transparent);
+    }
+  }
+
+  .btn-fab {
+    &.btn-primary-filled {
+      @include m.btn-filled($color-primary, $color-primary-dark);
+    }
+  }
+
+  // BADGES
+  .badge {
+    &.badge-filled {
+      background-color: scale-color($color-primary, $lightness: 50%);
+      border-color: scale-color($color-primary, $lightness: 50%);
+      color: $color-primary-dark;
+    }
+
+    &.badge-outline {
+      background-color: transparent;
+      border-color: $color-surface-outline;
+      color: $color-on-primary;
+    }
+  }
+
+  // CARDS
+  .card {
+    background-color: $color-surface-1;
+  }
+
+  // SIDEBAR
+  .sidebar {
+    background-color: scale-color($color-surface-1, $lightness: 5%);
+    color: $color-white;
+    border: $color-surface-outline;
+
+    .sidebar-content {
+      .sidebar-body {
+        .sidebar-item {
+          a {
+            color: $color-muted;
+          }
+
+          .sidebar-link {
+            &.router-link-active, &.router-link-exact-active {
+              background-color: scale-color($color-primary, $alpha: -90%);
+              color: $color-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // FORMS
+  .form-control {
+    label {
+      color: $color-on-body;
+    }
+
+    input {
+      border: 1px solid $color-surface-outline;
+      background-color: $bg-body;
+      color: $color-on-body;
+    }
+
+    // FILLED FIELD
+    &:has(.filled-field) {
+      &:has(.filled-field:focus,:active) {
+        label {
+          color: $color-primary;
+        }
+      }
+
+      &:has(.filled-field:not(:placeholder-shown)) {
+        label {
+          color: $color-primary;
+        }
+      }
+
+      .filled-field {
+        background-color: transparent;
+        border: transparent;
+        border-bottom: 1px solid $color-primary;
+
+        &:hover {
+          background-color: transparent;
+          border-bottom: 2px solid $color-primary;
+        }
+
+        &:focus, &:active {
+          background-color: scale-color($bg-body, $lightness: -10%);
+        }
+
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+    }
+
+    // OUTLINE FIELD
+    &:has(.outline-field) {
+      &:has(.outline-field:focus,:active) {
+        label {
+          background-color: transparent;
+          color: $color-primary;
+        }
+
+        input {
+          border: 2px solid $color-primary;
+        }
+      }
+
+      &:has(.outline-field:not(:placeholder-shown)) {
+        label {
+          background-color: transparent;
+          color: $color-primary;
+        }
+
+        input {
+          border: 2px solid $color-primary;
+        }
+      }
+
+      .outline-field {
+        background-color: transparent;
+        border: 1px solid $color-primary;
+
+        &:hover {
+          background-color: transparent;
+        }
+
+        &:focus, &:active {
+          //background-color: scale-color($bg-body, $lightness: -10%);
+          outline: 0;
+        }
+
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+}

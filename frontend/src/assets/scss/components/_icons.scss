@@ -1,0 +1,22 @@
+@use "sass:math";
+@use "../abstracts/variables" as *;
+
+.material-icons-outlined {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.material-symbols-rounded {
+  font-variation-settings: 'FILL' 0,
+  'wght' 500,
+  'GRAD' 200,
+  'opsz' 48
+}
+
+.icon-wrap {
+  background-color: scale-color($color-primary, $alpha: -50%);
+  border-radius: $border-radius-12;
+  padding: $space-1;
+  margin-bottom: math.div($space-1, 0.8);
+  @extend .mdc-38;
+}

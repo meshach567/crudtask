@@ -1,0 +1,12 @@
+:root {
+  --fs-1: 3rem, 8.5vw + 1.5rem, 6rem;
+  --fs-2: 2rem, 5vw + .5rem, 4rem;
+  --fs-3: 1rem, 4vw + .5rem, 3rem;
+  --fs-4: .9rem, 1.75vw + .5rem, 3rem;
+  --fs-5: .8rem, 1.50vw + .5rem, 2.5rem;
+  --fs-6: .7rem, 1.1vw + .5rem, 2rem;
+
+  @each $color, $value in $theme-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+}

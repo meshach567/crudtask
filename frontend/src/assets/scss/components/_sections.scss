@@ -1,0 +1,27 @@
+@use "../abstracts/variables" as *;
+
+.section {
+  padding: calc($space-1 * 5) 0;
+
+  &.section-one {
+    background-color: map-get($theme-colors, color-black);
+    color: $color-white;
+
+    h3 {
+      color: $color-white;
+    }
+  }
+
+  &.section-hero {
+    background-color: $color-primary;
+    padding: calc($space-3 * 3);
+
+    &.bg-custom {
+      background-color: map-get($theme-colors, color-amber);
+    }
+  }
+
+  &.section-cards {
+    padding: calc($space-1 * 1) 0;
+  }
+}

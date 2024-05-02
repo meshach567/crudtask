@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend crud app built with express, mongoose and nodemon",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Meshach Arinze",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "mongodb": "^6.5.0",
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.3.2"
+  }
+}

@@ -1,0 +1,59 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as m;
+
+.btn {
+  @include m.btn-body;
+
+  &.btn-sm {
+    padding: 4px;
+    margin: 0;
+
+    i {
+      font-size: 18px;
+    }
+  }
+
+  &.btn-icon {
+    padding: 0.75rem 1rem;
+    border-radius: $border-radius-50;
+
+    i {
+      font-size: 18px;
+    }
+  }
+
+  &.btn-primary {
+    // COLOR - BACKGROUND
+    @include m.btn-filled($color-on-body, $color-primary);
+  }
+
+  &.btn-primary-filled {
+    @include m.btn-filled($color-primary, $color-primary-dark);
+  }
+
+  &.btn-secondary {
+    // COLOR - BACKGROUND
+    @include m.btn-filled($color-secondary-dark, $color-secondary);
+  }
+
+  &.btn-accent {
+    @include m.btn-filled($color-on-primary-inverse, $color-on-primary);
+  }
+
+  &.btn-link {
+    @include m.btn-filled($color-primary, $color-transparent);
+    text-decoration: underline;
+
+    :is(&.btn-icon) {
+      text-decoration: none;
+    }
+  }
+}
+
+.btn-fab {
+  @include m.btn-fab-body;
+
+  &.btn-primary-filled {
+    @include m.btn-filled($color-primary, $color-primary-dark);
+  }
+}

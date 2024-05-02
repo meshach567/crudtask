@@ -1,0 +1,69 @@
+@use "sass:math";
+@use "sass:map";
+@use "variables" as v;
+
+@mixin btn-body() {
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .5px;
+  border-style: none;
+  border-radius: v.$border-radius-50;
+  background-color: v.$color-white;
+  font-family: v.$font-dm-sans;
+  transition: v.$transition-cubic-bezier;
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@mixin btn-fab-body() {
+  position: fixed;
+  top: v.$space-2;
+  right: v.$space-2;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border-style: none;
+  border-radius: v.$border-radius-12;
+  font-family: v.$font-dm-sans;
+  transition: v.$transition-cubic-bezier;
+  cursor: pointer;
+}
+
+@mixin btn-filled($color, $bg) {
+  background: $bg;
+  color: $color;
+
+  &:hover {
+    background: scale-color($bg, $alpha: -30%);
+  }
+
+  &:active {
+    background: scale-color($bg, $alpha: -50%);
+    transform: scale(0.95);
+  }
+}
+
+@mixin text-color($color) {
+  color: $color !important;
+}
+
+@mixin text-gradient($deg, $colors...) {
+  $deg: 45deg !default;
+
+  background-image: -webkit-linear-gradient($deg, $colors);
+  background-image: -moz-linear-gradient($deg, $colors);
+  background-image: -o-linear-gradient($deg, $colors);
+  background-image: linear-gradient($deg, $colors);
+}
+
+@mixin media-query($key) {
+  $size: map.get(v.$breakpoints, $key);
+
+  @media only screen and (max-width: $size) {
+    @content
+  }
+}

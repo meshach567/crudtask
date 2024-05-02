@@ -1,0 +1,181 @@
+@use "sass:math";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as m;
+
+body {
+  font-family: $font-dm-sans;
+}
+
+h1 {
+  font-family: map-get($ds-headline1, font-family);
+  font-weight: map-get($ds-headline1, font-weight);
+  font-size: map-get($ds-headline1, font-size);
+  letter-spacing: map-get($ds-headline1, letter-spacing);
+}
+
+h2 {
+  font-family: map-get($ds-headline2, font-family);
+  font-weight: map-get($ds-headline2, font-weight);
+  font-size: map-get($ds-headline2, font-size);
+  letter-spacing: map-get($ds-headline2, letter-spacing);
+}
+
+h3 {
+  font-family: map-get($ds-headline3, font-family);
+  font-weight: map-get($ds-headline3, font-weight);
+  font-size: map-get($ds-headline3, font-size);
+  letter-spacing: map-get($ds-headline3, letter-spacing);
+}
+
+h4 {
+  font-family: map-get($ds-headline4, font-family);
+  font-weight: map-get($ds-headline4, font-weight);
+  font-size: map-get($ds-headline4, font-size);
+  letter-spacing: map-get($ds-headline4, letter-spacing);
+}
+
+h5 {
+  font-family: map-get($ds-headline5, font-family);
+  font-weight: map-get($ds-headline5, font-weight);
+  font-size: map-get($ds-headline5, font-size);
+  letter-spacing: map-get($ds-headline5, letter-spacing);
+}
+
+h6 {
+  font-family: map-get($ds-headline6, font-family);
+  font-weight: map-get($ds-headline6, font-weight);
+  font-size: map-get($ds-headline6, font-size);
+  letter-spacing: map-get($ds-headline6, letter-spacing);
+}
+
+p,
+a {
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+a {
+  color: $color-secondary;
+
+  &.text-link {
+    text-underline: none;
+    text-decoration: none;
+
+    &:hover {
+      box-shadow: inset 0 -3px 0 $color-secondary;
+    }
+
+    &:after {
+      content: 'arrow_forward';
+      font-family: 'Material Icons Outlined', sans-serif;
+      font-size: 20px;
+      vertical-align: middle;
+      margin-left: .5rem;
+    }
+  }
+}
+
+.fs-1 {
+  font-size: clamp(var(--fs-1));
+}
+
+.title {
+  font-size: 28px;
+}
+
+.subtitle-1 {
+  font-family: map-get($ds-subtitle1, font-family);
+  font-weight: map-get($ds-subtitle1, font-weight);
+  font-size: map-get($ds-subtitle1, font-size);
+  letter-spacing: map-get($ds-subtitle1, letter-spacing);
+}
+
+.text-hero {
+  font-size: calc(var(--fs-1) * 2);
+  line-height: 1;
+  letter-spacing: -0.05em;
+
+  &.is-separated {
+    letter-spacing: .5em;
+  }
+}
+
+@layer brand-colors {
+  .text-primary {
+    color: $color-primary;
+  }
+
+  .text-secondary {
+    color: $color-secondary;
+  }
+
+  .text-muted {
+    color: $color-muted;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-gradient {
+  color: #7319fa;
+  //background-image: -webkit-linear-gradient(45deg, #7319fa, #ff33b4, #ff7e29);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  @include m.text-gradient(45deg, #7319fa, #ff33b4, #ff7e29);
+
+  &.green {
+    @include m.text-gradient(45deg, $color-primary, $color-primary-dark);
+  }
+
+  &.blue {
+    @include m.text-gradient(45deg, $color-secondary, $color-primary-dark);
+  }
+
+  &.orange {
+    @include m.text-gradient(45deg, #ffba52, #ff7366);
+  }
+
+  &.grey {
+    @include m.text-gradient(45deg, #4d4c4c, #403f3f);
+  }
+
+  &.gold {
+    @include m.text-gradient(45deg, #d6c79a, #edd9a1);
+  }
+}
+
+// FONT SIZES
+.mdc-18 {
+  font-size: 18px;
+}
+
+.mdc-28 {
+  font-size: 28px;
+}
+
+.mdc-38 {
+  font-size: 38px;
+}
+
+.mdc-48 {
+  font-size: 48px;
+}
+
+// FONT WEIGHT
+.fw-400 {
+  font-weight: $fw-400;
+}
+
+.fw-500 {
+  font-weight: $fw-500;
+}
+
+.fw-700 {
+  font-weight: $fw-700;
+}

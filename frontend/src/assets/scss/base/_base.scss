@@ -1,0 +1,33 @@
+@use "../abstracts/variables" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bg-body;
+}
+
+// SCROLLBAR
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $color-surface-1 $color-surface-outline;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: $color-surface-1;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $color-surface-outline;
+  border-radius: 20px;
+}
